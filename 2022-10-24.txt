@@ -1,0 +1,9 @@
+1.安装node
+2.npm install -g hap-toolkit 全局安装快应用开发工具
+3.hap init `<project-name>` 初始化
+4.cd `<project-name>`
+5.npm install 安装npm依赖
+6.构建项目
+ npm run build
+7.启动项目
+npm run server

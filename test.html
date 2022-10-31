@@ -1,0 +1,46 @@
+<html>
+<head>
+     <style>
+     </style>
+</head>
+<body>
+    <canvas id="box" width='800' height='800'><canvas>
+</body>
+<script>
+    var c = document.querySelector('#box') //先获取canvas元素
+    var ctx = c.getContext('2d')  //创建 context 对象
+    ctx.translate(500, 500)
+    setInterval(function () {
+        //黑色半圆
+        ctx.rotate(Math.PI / 180)
+        ctx.beginPath()
+        ctx.arc(0, 0, 250, 0, Math.PI, false)
+        ctx.closePath()
+        ctx.fill()
+        //四分之一处黑色整圆
+        ctx.beginPath()
+        ctx.arc(-125, 0, 125, 0, Math.PI * 2, true)
+        ctx.closePath()
+        ctx.fillStyle = "black"
+        ctx.fill()
+        // 四分之三处白色整圆
+        ctx.beginPath()
+        ctx.arc(125, 0, 125, 0, Math.PI * 2, false)
+        ctx.closePath()
+        ctx.fillStyle = "#fff"
+        ctx.fill()
+        //在绘制整圆
+        ctx.beginPath()
+        ctx.arc(-125, 0, 50, 0, Math.PI * 2, true)
+        ctx.closePath()
+        ctx.fillStyle = "#fff"
+        ctx.fill()
+        //在绘制整圆
+        ctx.beginPath()
+        ctx.arc(125, 0, 50, 0, Math.PI * 2, false)
+        ctx.closePath()
+        ctx.fillStyle = "black"
+        ctx.fill()
+    }, 10)
+    </script>
+    </html>
